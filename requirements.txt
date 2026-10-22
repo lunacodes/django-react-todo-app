@@ -1,0 +1,6 @@
+black
+django
+django-cors-headers
+django-environ
+djangorestframework
+ruff
