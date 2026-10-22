@@ -6,9 +6,13 @@ Tools used:
 
 * Django
 * React
-* Postgres (tbi)
+* Postgres (tba)
 * gitignore.io
+* Pre-commit (tba)
 
 Todo:
 
+* Add Pre-commit
+* Add Postgres
 * Switch to Typescript
+* Check eslint config

@@ -10,8 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
-import environ
 from pathlib import Path
+
+import environ
 
 env = environ.Env(
     # set casting, default value
@@ -21,23 +22,22 @@ env = environ.Env(
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-# Take the environment variables from .env
 ENV_PATH = BASE_DIR / ".env"
-environ.Env.read_env(ENV_PATH)
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
+# Take environment variables from .env file
+environ.Env.read_env(BASE_DIR / ".env")
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
-
+SECRET_KEY: str = env("SECRET_KEY")
 
 # False if not in os.environ because of casting above
-DEBUG = env("DEBUG")
+DEBUG: str = env("DEBUG")
 
-ALLOWED_HOSTS = []
-CORS_ORIGIN_WHITELIST = ["http://localhost:3000"]
+HOSTS = env("ALLOWED_HOSTS")
+ALLOWED_HOSTS = HOSTS.split(",")
+
+CORS_ALLOWED: str = env("CORS_ORIGIN_WHITELIST")
+CORS_ORIGIN_WHITELIST: list[str] = CORS_ALLOWED.split(",")
 
 
 # Application definition
