@@ -16,9 +16,10 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import include, path
 from django.urls.resolvers import URLResolver
 from rest_framework import routers
+
 from todo import views
 
 router = routers.DefaultRouter()
