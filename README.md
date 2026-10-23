@@ -5,10 +5,12 @@ This is a basic todo app currently following the tutorial at https://www.digital
 Tools used:
 
 * Django
-* React
-* Postgres (tba)
 * gitignore.io
+* Jest
+* Postgres (tba)
 * Pre-commit (tba)
+* Pytest
+* React
 
 Todo:
 
