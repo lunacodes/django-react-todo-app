@@ -1,6 +1,10 @@
 black
+coverage
 django
 django-cors-headers
 django-environ
 djangorestframework
+pytest
+pytest-cov
+pytest-django
 ruff
