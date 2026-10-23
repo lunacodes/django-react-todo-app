@@ -4,6 +4,8 @@ django
 django-cors-headers
 django-environ
 djangorestframework
+openai
+pylint-django
 pytest
 pytest-cov
 pytest-django

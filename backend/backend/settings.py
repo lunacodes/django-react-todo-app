@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
 from pathlib import Path
+from typing import Any
 
 import environ
 
@@ -21,8 +22,8 @@ env = environ.Env(
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-ENV_PATH = BASE_DIR / ".env"
+BASE_DIR: Path = Path(__file__).resolve().parent.parent
+ENV_PATH: Path = BASE_DIR / ".env"
 
 # Take environment variables from .env file
 environ.Env.read_env(BASE_DIR / ".env")
@@ -33,8 +34,8 @@ SECRET_KEY: str = env("SECRET_KEY")
 # False if not in os.environ because of casting above
 DEBUG: str = env("DEBUG")
 
-HOSTS = env("ALLOWED_HOSTS")
-ALLOWED_HOSTS = HOSTS.split(",")
+HOSTS: str = env("ALLOWED_HOSTS")
+ALLOWED_HOSTS: list[str] = HOSTS.split(",")
 
 CORS_ALLOWED: str = env("CORS_ORIGIN_WHITELIST")
 CORS_ORIGIN_WHITELIST: list[str] = CORS_ALLOWED.split(",")
@@ -42,7 +43,7 @@ CORS_ORIGIN_WHITELIST: list[str] = CORS_ALLOWED.split(",")
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS: list[str] = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -54,7 +55,7 @@ INSTALLED_APPS = [
     "todo",
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE: list[str] = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -67,7 +68,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "backend.urls"
 
-TEMPLATES = [
+TEMPLATES: list[dict[str, Any]] = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [],
@@ -88,7 +89,7 @@ WSGI_APPLICATION = "backend.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/6.1/ref/settings/#databases
 
-DATABASES = {
+DATABASES: dict[str, dict[str, Any]] = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
@@ -99,7 +100,7 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators
 
-AUTH_PASSWORD_VALIDATORS = [
+AUTH_PASSWORD_VALIDATORS: list[dict[str, str]] = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
