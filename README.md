@@ -1,23 +1,13 @@
 # Todo App made with Django, React, and Postgres
 
-This is a basic todo app currently following the tutorial at https://www.digitalocean.com/community/tutorials/build-a-to-do-application-using-django-and-react. The point was to brush up on React (I normally use Python in my day job) and incorporate Django. Previously when I'd worked on React, it was with Node.js as the backend. I find Django a lot more straightforward to work with.
+Based on tutorial at https://www.digitalocean.com/community/tutorials/build-a-to-do-application-using-django-and-react. I used it to brush up on React a bit (I use Python in my day job) and incorporate Django. Previously I've used Node.js as a backend, but I think Django is a much nicer experience.
 
-## Tools used:
+I will probably continue to hack around on this, or else replace it with a more unique project.
 
-* Django
-* gitignore.io
-* Jest
-* Postgres
-* Pre-commit
-* Pytest
-* React
+## Potential Next Steps
 
-## Todo:
-
-* Switch to Typescript
-* Check eslint config
-
-## Questions
-
-Q: Why are both pipenv and venv present?
-A: VS Code's Pylance wasn't detecting imports correctly with only Pipenv.
+* Convert JS to Typescript
+* Add additional frontend test
+* Deploy on DigitalOcean or similar
+* Add documentation
+* Add user profiles
